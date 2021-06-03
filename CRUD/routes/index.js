@@ -28,7 +28,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get("/add", (req, res) => {
-  dbConnect.query("SELECT * FROM typeheroes", (error, data) => {
+  dbConnect.query("SELECT * FROM typeheroes ", (error, data) => {
     const dataType = data;
     if (error) {
       console.log(error);
