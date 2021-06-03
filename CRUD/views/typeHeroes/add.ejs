@@ -25,23 +25,8 @@
     <h1 class="title-me mt-3 mb-3"> Add Hero</h1>
     <form action="/store" method="POST" class="container">
       <div class="mb-3">
-        <label class="form-label" >Nama Hero</label>
-        <input value="<%=name%>" name="namahero" type="text" class="form-control" id="" placeholder="nama hero">
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Ability</label>
-        <select name="ability" class="form-control">
-          <option value=""></option>
-          <% dataType.forEach(type=> { %>
-            <option value="<%=type.id%>">
-                <%=type.name%>
-            </option>
-            <% }) %>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Photo Hero</label>
-        <input value="<%=photo%>" name="photoHero" type="text" class="form-control" id="" placeholder="Photo hero">
+        <label class="form-label" >Type Hero</label>
+        <input value="<%=name%>" name="name" type="text" class="form-control" id="" placeholder="type name">
       </div>
       <% 
         if(messages.error){
