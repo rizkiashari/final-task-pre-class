@@ -35,7 +35,7 @@ router.get("/add", (req, res) => {
     } else {
       res.render("heroes/add", {
         dataType,
-        id: "",
+        type_id: "",
         name: "",
         typeName: "",
         photo: "",
@@ -56,18 +56,18 @@ router.post("/store", (req, res) => {
 
   let error = false;
 
-  if (!storeData.namaHero.length || !storeData.idType.length || !storeData.photo.length) {
+  if (!storeData.name.length || !storeData.idType.length || !storeData.photo.length) {
     error = true;
     req.flash("error", "Semua data harus di isi!!");
     res.render("heroes/add", {
-      name: storeData.namaHero,
+      name: storeData.name,
       type_id: storeData.type_id,
       photo: storeData.photo,
     });
   }
   else {
     const formData = {
-      name: storeData.namaHero,
+      name: storeData.name,
       type_id: storeData.type_id,
       photo: storeData.photo,
     }
