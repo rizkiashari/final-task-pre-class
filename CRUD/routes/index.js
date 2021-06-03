@@ -39,7 +39,7 @@ router.get("/add", (req, res) => {
         name: "",
         typeName: "",
         photo: "",
-        idType: "",
+        type_id: "",
       });
     }
   })
@@ -49,8 +49,8 @@ router.get("/add", (req, res) => {
 router.post("/store", (req, res) => {
 
   const storeData = {
-    namaHero: req.body.name,
-    idType: req.body.idType,
+    name: req.body.name,
+    type_id: req.body.idType,
     photo: req.body.photo,
   };
 
@@ -60,15 +60,15 @@ router.post("/store", (req, res) => {
     error = true;
     req.flash("error", "Semua data harus di isi!!");
     res.render("heroes/add", {
-      namaHero: storeData.namaHero,
-      idType: storeData.idType,
+      name: storeData.namaHero,
+      type_id: storeData.type_id,
       photo: storeData.photo,
     });
   }
   else {
     const formData = {
       name: storeData.namaHero,
-      type_id: storeData.idType,
+      type_id: storeData.type_id,
       photo: storeData.photo,
     }
   
